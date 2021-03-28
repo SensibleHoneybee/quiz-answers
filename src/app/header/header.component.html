@@ -1,0 +1,22 @@
+<div>
+  <div class="normal-toolbar">
+    <mat-toolbar color="primary">
+      <span>{{title}}</span>
+      <span class="example-spacer"></span>
+      <span class="your-name">{{currentPlayerName}}</span>
+      <button *ngIf="this.currentGame != null" mat-raised-button (click)="doLogout()">Logout</button>
+    </mat-toolbar>
+  </div>
+  <div class="narrow-toolbar">
+    <mat-toolbar color="primary">
+      <mat-toolbar-row class="narrow-toolbar-row" color="primary">
+        <span>{{title}}</span>
+      </mat-toolbar-row>
+      <mat-toolbar-row *ngIf="this.currentGame != null" class="narrow-toolbar-row" color="primary">
+        <span class="example-spacer"></span>
+        <span class="your-name">{{currentPlayerName}}</span>
+        <button class="narrow-toolbar-button" (click)="doLogout()">Logout</button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+</div>

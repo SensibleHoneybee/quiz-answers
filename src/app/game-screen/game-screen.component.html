@@ -1,0 +1,24 @@
+<div class="mainbox">
+
+  <form class="the-form" [formGroup]="answerForm">
+    <div formArrayName="answers">
+      <div *ngFor="let item of items.controls; let i = index">
+        <div class="form-group" [formGroupName]="i">
+          <label>Question {{i+1}}</label>
+          <input formControlName="answerValue">
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <label class="dummy-reg-label" *ngIf="dummyRegistrationMode">Please wait, the quiz will begin shortly...</label>
+
+  <button *ngIf="playingAnActualGame" class="submit-btn" [disabled]="submitted" mat-raised-button color="primary"
+      [class.disabled]="submitted" (click)="submit()">
+    {{submitBtnText}}
+  </button>
+
+  <button *ngIf="submitted || dummyRegistrationMode" [routerLink]="['/dashboard']" class="reload-btn" mat-raised-button color="primary" (click)="reload()">
+    Reload
+  </button>
+</div>

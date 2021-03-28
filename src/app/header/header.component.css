@@ -1,0 +1,36 @@
+.normal-toolbar {
+    display: block;
+}
+
+.narrow-toolbar {
+    display: none;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.your-name {
+    color: yellowgreen;
+    font-size: 80%;
+    vertical-align: middle;
+    margin-right: 12px;
+}
+
+@media (max-width: 991px) {
+    .normal-toolbar {
+        display: none;
+    }
+    
+    .narrow-toolbar {
+        display: block;
+    }
+
+    .narrow-toolbar-row {
+        height: 35px;
+    }
+
+    .narrow-toolbar-button {
+        height: 20px;
+    }
+}
